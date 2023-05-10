@@ -1,0 +1,16 @@
+<h1 class='page-header'>So You're New</h1>
+
+
+<form class='form' action="<%= users_url %>" method="post">
+  <input type="hidden"name="authenticity_token"value="<%= form_authenticity_token %>">
+
+    <label>Email Here: ٩(｡•́‿•̀｡)۶</label>
+    <input type="text" name="user[email]">
+
+    <label>Password Here: (￣b￣)</label>
+    <input type="password" name="user[password]">
+
+  <input type="submit" value="YIPEE">
+
+  <a class='button' href="<%= new_user_url %>" >Go to Sign In!</a>
+</form>

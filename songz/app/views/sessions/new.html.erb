@@ -1,0 +1,13 @@
+<h2 class='page-header'>Now You Can Sign In (* ^ ω ^)</h2>
+
+
+<form class='form' action="<%= session_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+    <label for='new-email'>Email: </label>
+    <input type="text" name="user[email]">
+    <label for='new-password'>Password:</label>
+    <input type="password" name="user[password]">
+
+  <input type="submit" value="Let's Go">
+</form>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Songz</title>
+    <title>||◁ㅤ❚❚ㅤ▷|| ↻ | 〰ଘ(੭ˊᵕˋ)੭ ..。.:*・ﾟ♫₊ ♪</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +10,22 @@
   </head>
 
   <body>
+      <% if logged_in? %>
+            <p>Logged in as: <%= current_user.email %></p>
+          <form action=<%= session_url %> method='POST'>
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+            <input 
+              type="submit" value="Get Out">
+          </form>
+      <% else %>
+          <a class="redirects" href="<%= new_user_url %>"> Sign Up First (✧ω✧)</a>
+          <a class="redirects" href="<%= new_session_url %>"> Login!!</a>
+      <% end %>
     <%= yield %>
+
+
   </body>
+
+
 </html>
